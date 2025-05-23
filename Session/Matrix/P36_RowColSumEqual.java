@@ -34,15 +34,8 @@ public class P36_RowColSumEqual {
       }
     }
     long ans = 0;
-    int i = 0, j = 0;
-    while (i < n && j < n) {
-      long diff = Math.min(target - row[i], target - col[j]);
-      row[i] += diff;
-      col[j] += diff;
-      ans += diff;
-  
-      if (row[i] == target) i++;
-      if (col[j] == target) j++;
+    for(int i = 0; i < n; i++) {
+      ans += target - row[i];
     }
     System.out.println(ans);
   }
